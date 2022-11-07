@@ -7,6 +7,7 @@
     
     <!-- entities -->
     <class>com.skilldistillery.lucid.entities.Dream</class>
+    <class>com.skilldistillery.lucid.entities.User</class>
    
     <!-- end entities -->
 

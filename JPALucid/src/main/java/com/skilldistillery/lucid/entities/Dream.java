@@ -1,11 +1,16 @@
 package com.skilldistillery.lucid.entities;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Objects;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Dream {
@@ -15,6 +20,19 @@ public class Dream {
 	private int id;
 	
 	private String name;
+	
+	private LocalDate date;
+	
+	private String description;
+	
+	private Boolean lucid;
+	
+	@Column(name="time_of")
+	private LocalTime time;
+	
+	@ManyToOne
+	@JoinColumn(name="user_id")
+	private User user;
 
 	public Dream() {
 		super();
@@ -34,6 +52,46 @@ public class Dream {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Boolean getLucid() {
+		return lucid;
+	}
+
+	public void setLucid(Boolean lucid) {
+		this.lucid = lucid;
+	}
+
+	public LocalTime getTime() {
+		return time;
+	}
+
+	public void setTime(LocalTime time) {
+		this.time = time;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override
@@ -60,6 +118,16 @@ public class Dream {
 		builder.append(id);
 		builder.append(", name=");
 		builder.append(name);
+		builder.append(", date=");
+		builder.append(date);
+		builder.append(", description=");
+		builder.append(description);
+		builder.append(", lucid=");
+		builder.append(lucid);
+		builder.append(", time=");
+		builder.append(time);
+		builder.append(", user=");
+		builder.append(user);
 		builder.append("]");
 		return builder.toString();
 	}
