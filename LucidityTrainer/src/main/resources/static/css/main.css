@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+body {
+	background-color: lightgrey;
+}
+#welcomeH1 {
+	font-family: "Lucida Console", monospace;
+	text-align: center;
+	
+}
