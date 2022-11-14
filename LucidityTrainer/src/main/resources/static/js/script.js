@@ -62,7 +62,7 @@ function getDream(dreamId){
 				let dream = JSON.parse(xhr.responseText);
 				displayDream(dream);
 			}else{
-				displayError("Error retrieving Dream List " + xhr.status);
+				displayError("Error retrieving Dream " + xhr.status);
 			}
 		}
 	};
@@ -80,4 +80,14 @@ function displayDream(dream){
 	let bq = document.createElement('bq');
 	bq.textContent = dream.description;
 	dreamDetailsDiv.appendChild(bq);
-};
+	let updateButton = document.createElement('button');
+	updateButton.textContent = 'Update Dream';
+	updateButton.id = 'btn-update';
+	updateButton.type = 'button';
+	updateButton.value = 'Update Dream';
+	
+	dreamDetailsDiv.appendChild(updateButton);
+	
+	
+	
+}
