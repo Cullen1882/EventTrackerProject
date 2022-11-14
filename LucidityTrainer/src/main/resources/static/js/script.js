@@ -87,7 +87,74 @@ function displayDream(dream){
 	updateButton.value = 'Update Dream';
 	
 	dreamDetailsDiv.appendChild(updateButton);
+	updateButton.addEventListener('click', function(evt){
+		updateDreamForm(dream);
+	});
 	
 	
+	
+}
+function updateDreamForm(dream){
+	console.log(dream);
+	let dreamUpdateFormDiv = document.getElementById('dreamUpdateFormDiv');
+	dreamUpdateFormDiv.textContent = '';
+	let form = document.createElement('form');
+	form.name = 'updateDreamForm';
+	dreamUpdateFormDiv.appendChild(form);
+		
+	let dreamName = document.createElement('input');
+	dreamName.name = dream.name;
+	dreamName.value = dream.name;
+	dreamName.type = 'text';
+	form.appendChild(dreamName);
+	
+	let dreamDesc = document.createElement('input');
+	dreamDesc.name = dream.description;
+	dreamDesc.value = dream.description;
+	dreamDesc.type = 'text';
+	form.appendChild(dreamDesc);
+	
+	
+	let submit = document.createElement('input');
+	submit.name = 'submit';
+	submit.type = 'submit';
+	submit.value = 'Update';
+	submit.addEventListener('click', function(evt){
+		evt.preventDefault();
+		let uptDream = {
+			id: dream.id,
+			name: dreamName.value,
+			date: dream.date,
+			description: dreamDesc.value,
+			lucid: dream.lucid,
+			time: dream.time,
+			user: dream.user
+		}
+		console.log(uptDream);
+		updateDream(uptDream);
+		form.reset();
+	});
+	
+	form.appendChild(submit);
+	
+	
+}
+function updateDream(uptDream){
+	let xhr = new XMLHttpRequest();
+	xhr.open('PUT', `api/dreams/${uptDream.id}`)
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState === 4){
+			if(xhr.status === 200 || xhr.status === 201){
+				let updatedDream = JSON.parse(xhr.responseText);
+				displayDream(updatedDream); 
+				loadDreamList();
+			}else{
+				displayError('Error updating dream: ' + xhr.status);
+			}
+		}
+	}
+	xhr.setRequestHeader('Content-type', 'application/json');
+	let updatedDream = JSON.stringify(uptDream);
+	xhr.send(updatedDream);
 	
 }
