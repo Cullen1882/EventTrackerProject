@@ -19,6 +19,8 @@ steps in training the subconscious to recognize when dreams are occurring in ord
 
 ## Lessons Learned
 This project is helping reinforce the understanding of CRUD operations in a RESTful interface. Through troubleshoot in a few cases, I have been able to remedy any errors received through POSTMAN while attempting to perform an operation. At this stage in the application I am mostly using the Service interface to perform the basic CRUD operations and have yet to implement the more unique methods contained in the Repository. As the project progresses, there will be a need for the Repository, at which point, I am sure more lessons will be learned.
+Updated Lessons learned
+This week I wanted to focus on displaying forms and data on a single page using Event Listeners and dynamically created page elements. I also wanted to get a better understanding of the way that objects were passed from function to function in our script as well as how JavaScript objects interacted with the form. 
 
 
 
