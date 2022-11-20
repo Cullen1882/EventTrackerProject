@@ -1,0 +1,17 @@
+<h1>User Registration Form</h1>
+
+
+
+<div>
+  <label for="email">Email</label>
+  <input type="text" name="email" value="email" placeholder="JohnDoe@email.com" [(ngModel)]="newUser.email">
+  <label for="username">Username</label>
+  <input type="text" name="username" value="username" placeholder="JohnDoe111" [(ngModel)]="newUser.username">
+  <label for="password">Password</label>
+  <input type="text" name="password" value="password" placeholder="Not Password" [(ngModel)]="newUser.password">
+  <label for="firstName">First Name</label>
+  <input type="text" name="firstName" value="firstName" placeholder="John" [(ngModel)]="newUser.firstName">
+  <label for="password">Last Name</label>
+  <input type="text" name="lastName" value="lastName" placeholder="Doe" [(ngModel)]="newUser.lastName">
+  <button type="submit" name="submit" (click)="register(newUser)">Register</button>
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Dream } from 'src/app/models/dream';
+import { AuthService } from 'src/app/services/auth.service';
 import { DreamService } from 'src/app/services/dream.service';
 
 @Component({
@@ -9,12 +11,20 @@ import { DreamService } from 'src/app/services/dream.service';
 })
 export class HomeComponent implements OnInit {
 
-  dreams: Dream[] = [];
+  public dreams: Dream[] = [];
+  public isCollapsed = false;
 
   constructor(
-    private dreamService: DreamService
+    private dreamService: DreamService,
+    private auth: AuthService,
+    private route: ActivatedRoute,
+    private router: Router
+
   ) { }
 
+  loggedIn(): boolean {
+    return this.auth.checkLogin();
+  }
   loadDreams(){
     this.dreamService.index().subscribe({
       next: (dreams) => {
@@ -30,7 +40,7 @@ export class HomeComponent implements OnInit {
     })
   }
   ngOnInit(): void {
-    this.loadDreams();
+    // this.loadDreams();
   }
 
 }
