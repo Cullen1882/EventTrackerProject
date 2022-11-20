@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(45) NULL,
   `username` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(100) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
   `profile_pic` VARCHAR(150) NULL,
   `role` VARCHAR(45) NOT NULL,
