@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Dream } from 'src/app/models/dream';
@@ -18,7 +19,8 @@ export class DreamComponent implements OnInit {
   constructor(
     private dreamService: DreamService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private date: DatePipe
 
     )
     { }
@@ -69,7 +71,7 @@ export class DreamComponent implements OnInit {
 
       },
       error: (error) => {
-        console.error('HomeComponent.loadDreams: error getting dreams list')
+        console.error('dreamComponent.loadDreams: error getting dreams list')
 
       }
     })

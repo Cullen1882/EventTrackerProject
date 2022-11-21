@@ -1,3 +1,4 @@
+<h1>Your Dream Log</h1>
 <div id="dreamList" *ngIf="dreams.length > 0">
   <table class="table table-striped table-hover">
     <thead class="table-dark">
@@ -12,6 +13,10 @@
     <tbody>
       <tr *ngFor="let dream of dreams">
         <td (click)="displayDream(dream)">{{ dream.name }}</td>
+        <td (click)="displayDream(dream)">{{ dream.date | date }}</td>
+        <td (click)="displayDream(dream)">{{ dream.description}}</td>
+        <td (click)="displayDream(dream)">{{ dream.lucid}}</td>
+        <td (click)="displayDream(dream)">{{ dream.time}}</td>
 
         <td><button (click)="deleteDream(dream.id)">Delete</button></td>
       </tr>

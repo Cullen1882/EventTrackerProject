@@ -25,8 +25,8 @@ export class DreamService {
     };
     return options;
   }
-  index(): Observable<Dream[]> {
-    return this.http.get<Dream[]>(this.url).pipe(
+  index() {
+    return this.http.get<Dream[]>(this.url, this.getHttpOptions()).pipe(
       catchError((err: any) => {
         console.log(err);
         return throwError(
@@ -52,7 +52,7 @@ export class DreamService {
       catchError((err: any) => {
         console.log(err);
         return throwError(
-          () => new Error('TodoService.create():error creating Todo: ' + err)
+          () => new Error('dreamService.create():error creating Dream: ' + err)
         );
       })
     );
