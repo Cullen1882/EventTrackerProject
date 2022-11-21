@@ -15,6 +15,8 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { DreamComponent } from './components/dream/dream.component';
+import { NavigateComponent } from './components/navigate/navigate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     LogoutComponent,
     AboutComponent,
     ContactComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DreamComponent,
+    NavigateComponent
   ],
   imports: [
     BrowserModule,

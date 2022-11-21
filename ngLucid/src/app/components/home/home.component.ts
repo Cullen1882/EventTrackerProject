@@ -11,36 +11,8 @@ import { DreamService } from 'src/app/services/dream.service';
 })
 export class HomeComponent implements OnInit {
 
-  public dreams: Dream[] = [];
-  public isCollapsed = false;
+  constructor( ) { }
 
-  constructor(
-    private dreamService: DreamService,
-    private auth: AuthService,
-    private route: ActivatedRoute,
-    private router: Router
-
-  ) { }
-
-  loggedIn(): boolean {
-    return this.auth.checkLogin();
-  }
-  loadDreams(){
-    this.dreamService.index().subscribe({
-      next: (dreams) => {
-        console.log(dreams);
-        this.dreams = dreams;
-
-
-      },
-      error: (error) => {
-        console.error('HomeComponent.loadDreams: error getting dreams list')
-
-      }
-    })
-  }
-  ngOnInit(): void {
-    // this.loadDreams();
-  }
+  ngOnInit(): void {}
 
 }

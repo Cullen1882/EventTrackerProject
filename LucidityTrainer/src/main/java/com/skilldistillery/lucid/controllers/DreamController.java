@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.skilldistillery.lucid.entities.Dream;
 import com.skilldistillery.lucid.services.DreamService;
 
-@CrossOrigin({"*", "http://localhost/"})
 @RestController
 @RequestMapping("api")
+@CrossOrigin({"*", "http://localhost/"})
 public class DreamController {
 	
 	@Autowired

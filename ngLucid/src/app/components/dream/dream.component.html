@@ -1,0 +1,30 @@
+<div id="dreamList" *ngIf="dreams.length > 0">
+  <table class="table table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Dream Name</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Lucid</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dream of dreams">
+        <td (click)="displayDream(dream)">{{ dream.name }}</td>
+
+        <td><button (click)="deleteDream(dream.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+  <form name="newDream" *ngIf="newDream">
+    <input type="text" name="name" placeholder="Dream Name" [(ngModel)]="newDream.name" />
+    <input type="date" name="date" placeholder="Dream Date" [(ngModel)]="newDream.date" />
+    <input type="text" name="description" placeholder="Description" [(ngModel)]="newDream.description" />
+    <input type="checkbox" name="lucid" placeholder="Lucid?" [(ngModel)]="newDream.lucid" />
+    <input type="time" name="time" placeholder="Time of Dream" [(ngModel)]="newDream.time" />
+    <button class="btn btn-primary" (click)="addDream()">Add Dream</button>
+  </form>

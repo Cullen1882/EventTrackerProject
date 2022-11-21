@@ -1,7 +1,9 @@
-<form>
-  <label for="username">Username: </label>
-  <input type="text" name="username" placeholder="UserName112" [(ngModel)]="loginUser.username">
-  <label for="password">Password: </label>
-  <input type="password" name="password" placeholder="Password? Really?" [(ngModel)]="loginUser.password">
-  <button type="submit" name="submit" (click)="login(loginUser)">Log In</button>
-</form>
+  <form>
+    <label for="username" class="nav-link">Username: </label>
+    <input class="nav-item" type="text" name="username" placeholder="UserName112" [(ngModel)]="loginUser.username">
+    <label for="password" class="nav-link">Password: </label>
+    <input class="nav-item" type="password" name="password" placeholder="Password? Really?" [(ngModel)]="loginUser.password">
+    <button type="submit" name="submit" (click)="login(loginUser)">Log In</button>
+  </form>
+
+
